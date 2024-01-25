@@ -1,16 +1,41 @@
 {
   "name": "goit-node-rest-api",
   "scripts": {
-    "start": "node ./app.js",
-    "dev": "nodemon ./app.js"
+    "start": "cross-env NODE_ENV=production node ./app.js",
+    "dev": "cross-env NODE_ENV=development nodemon ./app.js"
   },
+  "keywords": [],
+  "license": "ISC",
+  "type": "module",
   "dependencies": {
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.2",
     "express": "^4.18.2",
     "joi": "^17.11.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "nanoid": "^3.3.4",
+    "nodemon": "^3.0.4"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "eslint": "^8.34.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "husky": "^4.3.8",
+    "lint-staged": "^13.1.2",
+    "nodemon": "^3.0.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
